@@ -1,6 +1,6 @@
 {
   "name": "@fmarcosdev/git-hooks",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Hooks de git (commit-msg, pre-commit, pre-push) sin dependencias: secretos, mensaje, versión, variables de entorno, lint y Sonar en modo «no empeorar», cobertura del código nuevo y check antes de subir. El commit avisa, el push frena.",
   "license": "MIT",
   "author": "Freddy Huaylla <fmarcosdev@gmail.com>",
