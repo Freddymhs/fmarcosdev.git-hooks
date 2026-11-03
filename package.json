@@ -6,7 +6,7 @@
   "author": "Freddy Huaylla <fmarcosdev@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Freddymhs/fmarcosdev.git-hooks"
+    "url": "git+https://github.com/Freddymhs/fmarcosdev.git-hooks.git"
   },
   "type": "module",
   "bin": {
