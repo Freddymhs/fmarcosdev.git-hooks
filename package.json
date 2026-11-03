@@ -1,0 +1,77 @@
+{
+  "name": "@fmarcosdev/git-hooks",
+  "version": "0.0.0-development",
+  "description": "Hooks de git (commit-msg, pre-commit, pre-push) sin dependencias: secretos, mensaje, versión, variables de entorno, lint y Sonar en modo «no empeorar», cobertura del código nuevo y check antes de subir. El commit avisa, el push frena.",
+  "license": "MIT",
+  "author": "Freddy Huaylla <fmarcosdev@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Freddymhs/fmarcosdev.git-hooks"
+  },
+  "type": "module",
+  "bin": {
+    "git-hooks": "bin/git-hooks.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "node --test tests/*.spec.mjs",
+    "lint": "eslint src bin tests",
+    "lint:sonar": "eslint -c eslint.sonar.config.js src bin",
+    "check": "npm run lint && npm run lint:sonar && npm test",
+    "prepare": "husky"
+  },
+  "hooks": {
+    "ramaBase": "origin/main",
+    "exigeVersion": false,
+    "tasks": false,
+    "guiaUrl": "https://github.com/Freddymhs/fmarcosdev.git-hooks/blob/main/docs/guia.md",
+    "cobertura": {
+      "incluye": "src/**",
+      "nuevos": "^src/.+\\.mjs$"
+    }
+  },
+  "peerDependencies": {
+    "c8": ">=10",
+    "eslint": ">=9"
+  },
+  "peerDependenciesMeta": {
+    "c8": {
+      "optional": true
+    },
+    "eslint": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^11.0.1",
+    "@semantic-release/github": "^12.0.10",
+    "@semantic-release/npm": "^13.2.0",
+    "@semantic-release/release-notes-generator": "^14.1.1",
+    "c8": "^10.1.3",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-sonarjs": "^4.2.2",
+    "eslint-plugin-unicorn": "^61.0.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3",
+    "semantic-release": "^25.0.9",
+    "typescript": "~5.8",
+    "typescript-eslint": "^8.54.0"
+  }
+}
